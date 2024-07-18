@@ -1,0 +1,10 @@
+
+<div>
+    <label for="name">Add name</label>
+    <input type="text" name="item" id="name" #name>
+
+    <label for="email">Add email</label>
+    <input type="text" name ="email" id="email" #email>
+    
+    <button type="button" (click)="addItem(name.value, email.value)"> Add ELement</button>
+</div>

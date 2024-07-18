@@ -1,0 +1,100 @@
+<div class="stringInterpolation">
+  <h1>String Interpolation</h1>
+  <p>product Name : {{ productName }}</p>
+  <p>product Price : {{ productPrice }}</p>
+  <p>product Color : {{ productColor }}</p>
+</div>
+
+<div>
+  <h1>Property Binding</h1>
+  <label for="productName">Product Name = </label>
+  <input type="text" name="productName" [value]="productName" />
+  <br />
+  <br />
+  <label for="productPrice">Product Price = </label>
+  <input type="text" name="productPrice" [value]="productPrice" />
+  <br />
+  <br />
+  <label for="productColor">Product Color = </label>
+  <input type="text" name="productColor" [value]="productColor" />
+</div>
+
+<div>
+  <h1>Event Binding</h1>
+
+  <div>
+    <label for="productColor">Product Name = </label>
+    <input
+      type="text"
+      name="productName"
+      (input)="productNameChange($event)"
+      [value]="productName"
+    />
+
+    <p>
+      Product Name : <span>{{ productName }}</span>
+    </p>
+  </div>
+
+  <div>
+    <label for="productColor">Product Price = </label>
+    <input
+      type="text"
+      name="productPrice"
+      (input)="productPriceChange($event)"
+      [value]="productPrice"
+    />
+
+    <p>
+      Product Price : <span>{{ productPrice }}</span>
+    </p>
+  </div>
+
+  <div>
+    <label for="productColor">Product Color = </label>
+    <input
+      type="text"
+      name="productColor"
+      (input)="productColorChange($event)"
+      [value]="productColor"
+    />
+
+    <p>
+      Product Color : <span>{{ productColor }}</span>
+    </p>
+  </div>
+</div>
+
+<div>
+    <h1>Two way binding [ngModel]</h1>
+    <div>
+        <label class="" for="model">Car Model</label>
+        <input type="text" name="model" [(ngModel)]="carModel" />
+    </div>
+    <p>Car Model Entered : {{ carModel }}</p>
+
+    <button (click)="changeCarModel($event)">Submit</button>
+</div>
+
+<h1>Input</h1>
+
+<!-- <div *ngFor="let car of cars">
+  <app-search [cars] = 'car' ></app-search>
+</div> -->
+
+
+<h1>Output</h1>
+<h2>Data from output</h2>
+<app-output (newItemEvent)="addItem($event)"></app-output>
+
+<div>
+  <p *ngFor="let item of user">{{ item.name }} - {{ item.email }}</p>
+</div>
+
+<h2>Data transfering to child </h2>
+<div *ngFor="let user of user">
+  <app-search [users] = "user" ></app-search>
+</div>
+
+
+

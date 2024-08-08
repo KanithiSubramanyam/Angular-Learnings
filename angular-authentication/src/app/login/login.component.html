@@ -1,0 +1,20 @@
+<div class="app-login-form">
+    <app-snackbar [errorMessage]="errorMessage" *ngIf="errorMessage"></app-snackbar>
+    <h2 >{{ isLoginMode? 'Login Here' : 'Sign up Here' }}</h2>
+    <app-loader  *ngIf="isLoading" ></app-loader>
+    <form (ngSubmit)="onLoginSubmit(loginForm)" [formGroup]="loginForm" *ngIf="!isLoading">
+        <div class="form-input">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email address" formControlName="email" name="email">
+        </div>
+        <div class="form-input">
+            <label>Password</label>
+            <input type="password" placeholder="Password" formControlName="password" name="password">
+        </div>           
+        <button type="submit" class="app-login-btn" [disabled] = "loginForm.invalid">{{ isLoginMode? 'Login' : 'Sign up' }} </button>
+        <p>{{ !isLoginMode? 'Already having an account? ':'Do not have an accout yet? ' }} 
+            <button class="app-toggle-btn" type="button" (click)="onSwitchMode()">{{ !isLoginMode? 'Login' : 'Register' }}</button>
+        </p>
+    </form>
+</div>
+ 

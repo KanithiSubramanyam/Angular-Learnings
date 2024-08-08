@@ -1,0 +1,25 @@
+.notice-container {
+    margin: 20px;
+    border: 1px solid #28282B
+}
+
+.notice-header {
+    display: flex;
+    background-color: #28282B;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice-header button{
+    height: fit-content;
+    margin: 10px;
+}
+
+.notice-info {
+    padding: 0px 20px;
+}
+
+.notice-body {
+    padding: 10px 20px;
+}
+

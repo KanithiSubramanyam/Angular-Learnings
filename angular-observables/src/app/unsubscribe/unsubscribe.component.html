@@ -1,0 +1,35 @@
+
+<h1>Understanding to an Observable</h1>
+<div class="div-container" style="display: flex; flex-wrap: wrap;"> 
+    <div class="sub-container">
+        <h4>Subscriber 1</h4>
+        <hr>
+        <div class="data-list" *ngFor="let x of data1">
+            {{ x }}
+        </div>
+        <button (click)="onSubscribe1()">Subscribe</button>
+        <button (click)="onUnsubscribe1()">Unsubscribe</button>
+    </div>
+
+
+    <div class="sub-container">
+        <h4>Subscriber 2</h4>
+        <hr>
+        <div class="data-list" *ngFor="let x of data2">
+            {{ x }}
+        </div>
+        <button (click)="onSubscribe2()">Subscribe</button>
+        <button (click)="onUnsubscribe2()">Unsubscribe</button>
+    </div>
+
+
+    <div class="sub-container">
+        <h4>Subscriber 3</h4>
+        <hr>
+        <div class="data-list" *ngFor="let x of data3">
+            {{ x }}
+        </div>
+        <button (click)="onSubscribe3()">Subscribe</button>
+        <button (click)="onUnsubscribe3()">Unsubscribe</button>
+    </div>
+</div>
